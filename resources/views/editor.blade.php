@@ -28,7 +28,6 @@
 </div>
 <script type="application/javascript">
   function createNewDoc() {
-    console.log('mtav')
     tinymce.get('#textarea').resetContent();
     document.getElementById('selectedDocId').value = null;
   }

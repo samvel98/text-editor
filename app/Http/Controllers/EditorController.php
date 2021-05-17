@@ -10,9 +10,7 @@ class EditorController extends Controller
 {
   public function index() {
     $user = Auth::user();
-    $editorDocs = EditorDocument::all();
-    // $products = Product::limit(6)->get();
-    // $user_product = UserProduct::all();
+    $editorDocs = $user ? EditorDocument::where('user_id', $user->id)->get() : [];
     return view('editor', compact('editorDocs'))->with('user',$user);
   }
 
